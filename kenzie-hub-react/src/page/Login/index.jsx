@@ -1,10 +1,12 @@
-import { Link } from "react-router-dom"
+import FormLogin from "../../components/FormLogin"
+import Header from "../../components/Header"
 
 const Login = () => {
     return (
         <>
-        <Link to="/">register</Link>
-    
+
+            <Header />
+            <FormLogin />
         </>
     )
 }
