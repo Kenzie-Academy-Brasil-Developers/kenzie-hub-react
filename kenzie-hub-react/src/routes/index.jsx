@@ -5,7 +5,6 @@ import Login from "../page/Login";
 import Dashboard from "../page/Dashboard";
 
 const RoutesMain = () => (
-  
   <Routes>
     <Route path="/" element={<Register />} />
     <Route path="/login" element={<Login />} />
