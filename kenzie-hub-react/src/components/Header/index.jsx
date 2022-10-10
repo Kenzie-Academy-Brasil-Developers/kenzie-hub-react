@@ -8,7 +8,7 @@ const Header = () => {
 
             <h1>Kenzie Hub</h1>
 
-            <Link to="/login">
+            <Link to="/">
                 <button>Voltar</button>
             </Link>
         </Headerstyle >

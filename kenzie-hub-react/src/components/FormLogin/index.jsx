@@ -3,22 +3,31 @@ import { Link } from "react-router-dom"
 
 const FormLogin = () => {
 
+    function LoginUser (evt) {
+        evt.preventDefault()
+        console.log(evt.target.value)
+    }
+
     return  (
         <FormLoginStyle>
 
               <h2>Login</h2>
 
-            <form >
+            <form onSubmit={LoginUser}>
 
-                <label>Email</label>
-                <input type="email" placeholder="123@kenziehub.com.br" />
+                <label>
+                    Email
+                    <input type="email" placeholder="123@kenziehub.com.br" />
+                </label>
 
-                <label>Senha</label>
-                <input type="password" placeholder=" *  *  *  *  *  *  *  *" />
+                <label>
+                    Senha
+                    <input type="password" placeholder=" *  *  *  *  *  *  *  *" />
+                </label>
 
-                <button>Entrar</button>
+                <button type="submit" >Entrar</button>
                 <span>Ainda não possui uma conta ?</span>
-                <Link to="/"><button className="LinkRegister"> Cadastrar-se</button></Link>
+                <Link to="/Register"><button className="LinkRegister"> Cadastrar-se</button></Link>
         
             </form>
         </FormLoginStyle>

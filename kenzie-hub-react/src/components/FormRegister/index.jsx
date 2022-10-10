@@ -1,37 +1,61 @@
+import { useState } from "react"
 import { FormRegisterStyle } from "./style"
 
 
 const FormRegister = () => {
 
+    const [ nome, setName] = useState
+    const [ email, setEmail] = useState
+
+    function RegisterUser (evt) {
+        evt.preventDefault()
+        console.log(evt.target.value)
+    }
+
     return (
         <FormRegisterStyle>
-            <h2>Cria sua conta</h2>
+
+            <h2>Crie sua conta</h2>
 
             <p>Rapido e grátis, vamos nessa</p>
 
-            <form>
-                <label>Nome</label>
-                <input type="text" placeholder="Digite aqui seu nome" />
+            <form onSubmit={RegisterUser}>
+                <label>
+                    Nome
+                    <input type="text" placeholder="Digite aqui seu nome" />
+                </label>
                 
-                <label>Email</label>
-                <input type="email" placeholder="Digite aqui seu email" />
+                <label>
+                    Email
+                    <input type="email" placeholder="Digite aqui seu email" />
+                </label>
                 
-                <label>Senha</label>
-                <input type="password" placeholder="Digite aqui sua senha" />
+                <label>
+                    Senha
+                    <input type="password" placeholder="Digite aqui sua senha" />
+                </label>
                 
-                <label>Confirmar Senha</label>
-                <input type="password" placeholder="Confirme aqui seu senha" />
+                <label>
+                    Confirmar Senha
+                    <input type="password" placeholder="Confirme aqui seu senha" />
+                </label>
                 
-                <label>Bio</label>
-                <input type="text" placeholder="Fale sobre você" />
+                <label>
+                    Bio
+                    <input type="text" placeholder="Fale sobre você" />
+                </label>
                 
-                <label>Contato</label>
-                <input type="number" placeholder="Opção de contato" />
+                <label>
+                    Contato
+                    <input type="number" placeholder="Opção de contato" />
+                </label>
                 
-                <label>Selecionar Módulo</label>
-                <input type="text" placeholder="Primeiro Módulo" />
+                <label>
+                    Selecionar Módulo
+                    <input type="text" placeholder="Primeiro Módulo" />
+                </label>
 
-                <button>Cadastrar</button>
+                <button type="submit">Cadastrar</button>
 
             </form>
 
