@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const FormLoginStyle = styled.div`
 
+    height: 570px;
     width: 90%;
     max-width: 500px;
 
@@ -103,13 +104,18 @@ export const FormLoginStyle = styled.div`
         }
 
         .LinkRegister {
+            display: flex;
+            justify-content: center;
             width:100%;
             height: 40px;
 
+            text-align: center;
+            align-items: center;
             font-weight: 500;
             font-size: 12px;
             font-weight: bold;
 
+            color: var(--gray-0);
             background-color var(--gray-1);
             border: 1px solid var(--gray-1);
             border-radius: 4px;

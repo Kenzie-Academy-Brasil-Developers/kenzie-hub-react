@@ -12,7 +12,11 @@ export const Headerstyle = styled.header`
         color: var(--color-primary)
     }
 
-    button {
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
         width: 80px;
         height: 32px;
 
@@ -25,7 +29,7 @@ export const Headerstyle = styled.header`
         cursor: pointer;
     }
 
-    button:hover {
+    div:hover {
         background: var(--gray-1);
     }
 `
