@@ -57,6 +57,34 @@ export const FormRegisterStyle = styled.div`
             font-size: 16.2426px;
         }
 
+        h6 {
+            background-color: var(--color-primary-disable);
+            color: var(--gray-0);
+            
+            font-size: 0.7rem;
+            font-weight: bold;
+
+            letter-spacing: 0.52em;
+            text-align: center;
+
+            border-radius: 4px;
+        }
+
+        select {
+            width: 100%;
+            height: 50px;
+
+            padding: 10px;
+            font-weight: 400;
+            font-size: 16.2426px;
+            
+            color: var(--gray-1);
+            background: var(--gray-2);
+            border: 1px solid var(--gray-2);
+
+            border-radius: 4px;
+        }
+
         button {
             font-weight: 500;
             font-size: 16px;
@@ -69,6 +97,7 @@ export const FormRegisterStyle = styled.div`
             background: var(--color-primary-disable);
 
             border: 1px solid var(--color-primary-disable);
+            transition: width 2s, height 2s, background-color 2s, transform 2s;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -78,6 +107,4 @@ export const FormRegisterStyle = styled.div`
             border: 1px solid var(--color-primary-50);
         }
     }
-
-
 `

@@ -21,6 +21,7 @@ export const Headerstyle = styled.header`
         border-radius: 4px;
         font-weight: bold;
 
+        transition: width 2s, height 2s, background-color 2s, transform 2s;
         cursor: pointer;
     }
 

@@ -1,11 +1,11 @@
 import FormLogin from "../../components/FormLogin"
-import Header from "../../components/Header"
-
+import {HeaderLogin} from "./style"
 const Login = () => {
     return (
         <>
-
-            <Header />
+            <HeaderLogin>
+                <h1>Kenzie Hub</h1>
+            </HeaderLogin>
             <FormLogin />
         </>
     )

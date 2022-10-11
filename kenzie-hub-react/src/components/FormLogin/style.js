@@ -57,6 +57,19 @@ export const FormLoginStyle = styled.div`
             border: 1.2182px solid #F8F9FA;
         }
 
+        h6 {
+            background-color: var(--color-primary-disable);
+            color: var(--gray-0);
+            
+            font-size: 0.7rem;
+            font-weight: bold;
+
+            letter-spacing: 0.62em;
+            text-align: center;
+
+            border-radius: 4px;
+        }
+        
         button {
             height: 40px;
             font-weight: 500;
@@ -66,6 +79,8 @@ export const FormLoginStyle = styled.div`
             color: var(--gray-0);
             background: var(--color-primary);
             border: 1px solid var(--color-primary);
+
+            transition: width 1s, height 2s, background-color 1s, transform 2s;
             border-radius: 4px;
 
             margin 25px 0;
