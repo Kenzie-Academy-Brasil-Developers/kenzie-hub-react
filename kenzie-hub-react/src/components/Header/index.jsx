@@ -9,7 +9,7 @@ const Header = () => {
             <h1>Kenzie Hub</h1>
 
             <Link to="/">
-                <button>Voltar</button>
+                <div>Voltar</div>
             </Link>
         </Headerstyle >
     )

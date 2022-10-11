@@ -67,10 +67,10 @@ const FormLogin = () => {
         <button type="submit">Entrar</button>
         <span>Ainda não possui uma conta ?</span>
         <Link to="/Register">
-          <button type="submit" className="LinkRegister">
+          <div type="submit" className="LinkRegister">
             {" "}
             Cadastrar-se
-          </button>
+          </div>
         </Link>
       </form>
     </FormLoginStyle>
