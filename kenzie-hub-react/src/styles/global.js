@@ -14,6 +14,7 @@ export default createGlobalStyle`
     --gray-0: #F8F9FA;
     --sucess: #3FE864;
     --error: #E83F5B;
+    --container-modal: rgba(18, 18, 20, 0.5);
 }
 
 * {

@@ -7,6 +7,9 @@ export const Headerstyle = styled.header`
         display: flex;
         justify-content: space-evenly;
         align-items: center;
+        
+        border-bottom: 1px solid var(--gray-3);
+
 
     h1 {
         color: var(--color-primary)
