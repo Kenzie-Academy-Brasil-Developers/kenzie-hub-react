@@ -5,10 +5,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormRegisterStyle } from "./style";
 
 const FormRegister = () => {
-  const {RegisterUser, schemaRegister} = useContext(UserContext);
+  const {RegisterUser, schemaRegisterUser} = useContext(UserContext);
 
   const { register, handleSubmit, formState: { errors },} = useForm({
-    resolver: yupResolver(schemaRegister),
+    resolver: yupResolver(schemaRegisterUser),
   });
     
   return (

@@ -6,10 +6,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { FormLoginStyle } from "./style";
 
 const FormLogin = () => {
-  const { LoginUsers, schemaLogin} = useContext(UserContext);
+  const { LoginUsers, schemaLoginUser} = useContext(UserContext);
 
   const { register, handleSubmit, formState: { errors },} = useForm({
-    resolver: yupResolver(schemaLogin),
+    resolver: yupResolver(schemaLoginUser),
   });
 
   return (
