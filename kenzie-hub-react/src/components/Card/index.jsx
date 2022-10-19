@@ -11,7 +11,7 @@ const Card = () => {
     <CardStyle>
       <p>{user.techs.name}</p>
       <span>{user.techs.nivel}</span>
-      <img src={lixo}></img>
+      <img src={lixo} alt={`imagem perfil de ${user.techs.name}`}></img>
       
     </CardStyle>
   )

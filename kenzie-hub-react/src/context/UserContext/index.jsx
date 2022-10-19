@@ -10,31 +10,32 @@ const UserProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
-/*  */
-useEffect(() => {
-  async function loadUser() {
-    const token = localStorage.getItem("@kenziehub:token");
 
-    if (token) {
-      try {
-        api.defaults.headers.authorization = `Bearer ${token}`;
+  /*  */
+  useEffect(() => {
+    async function loadUserProfile() {
+      const token = localStorage.getItem("@kenziehub:token");
 
-        const profile = await api.get('/profile');
+      if (token) {
+        try {
+          api.defaults.headers.authorization = `Bearer ${token}`;
 
-        setUser(profile);
-      } catch (error) {
-        console.error(error);
-      }
+          const profile = await api.get("/profile");
+
+          setUser(profile);
+        } catch (error) {
+          console.error(error);
+        }
       }
       setLoading(false);
     }
-    loadUser();
+    loadUserProfile();
   }, []);
 
   /* 
     SECAO REGISTRAR USUARIO
 */
-  const schemaRegister = yup.object({
+  const schemaRegisterUser = yup.object({
     email: yup
       .string()
       .email("Deve ser um email válido")
@@ -66,7 +67,7 @@ useEffect(() => {
   /* 
     SECAO  LOGIN USUARIO
 */
-  const schemaLogin = yup.object({
+  const schemaLoginUser = yup.object({
     email: yup
       .string()
       .email("Deve ser um email válido")
@@ -100,8 +101,8 @@ useEffect(() => {
       value={{
         LoginUsers,
         RegisterUser,
-        schemaLogin,
-        schemaRegister,
+        schemaLoginUser,
+        schemaRegisterUser,
         user,
         loading,
       }}

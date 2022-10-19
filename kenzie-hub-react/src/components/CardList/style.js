@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const ListStyle = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-self: center;
 
     width: 100%;
 
@@ -16,7 +19,7 @@ export const ListStyle = styled.div`
         justify-content: space-between;
         padding: 15px 0;
 
-        min-width: 296px;
+        max-width: 596px;
       
 
         h1 {
@@ -24,6 +27,7 @@ export const ListStyle = styled.div`
             font-size: 16px;
             line-height: 18px;
            
+            margin-left: 10%;
         }
 
         button  {

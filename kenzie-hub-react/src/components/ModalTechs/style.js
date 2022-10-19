@@ -54,7 +54,7 @@ export const ModalStyle = styled.section`
         font-weight: 600;
         font-size: 16px;
         
-        color:  var(--gray-1);
+        color: var(--gray-1);
 
         cursor: pointer;
         }
@@ -111,7 +111,7 @@ export const ModalStyle = styled.section`
             }
 
         }
-        button {
+        .cadastrotech {
             height: 48px;
             width: 100%;
 

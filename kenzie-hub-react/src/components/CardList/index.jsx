@@ -5,34 +5,34 @@ import Card from "../Card"
 import { ModalTechs } from "../ModalTechs"
 import { ListStyle } from "./style"
 
+
 const  CardList = ( ) => {
 
-    const  [ techs, setTechs] = useState([])
+    const  [modal, setModal] = useState(false)
     
-    function  ModalAdd (){
-        //setar novo  estado para  array  techs. que  esta renderizando um  card para cada item na lista
-        // fazer tudo dentro de um useEfect para ficar olhando a montagem edesmontagem do estado array  techs
-        console.log(<ModalTechs />)
+    function  openModal (){
+        setModal(true)
     }
 
-    const {user} =  useContext(UserContext)
+    function  closeModal (){
+        setModal(false)
+    }
  
     return (
 
         <ListStyle>
             <div>
                 <h1>Tecnologias</h1>
-                <button onClick={ModalAdd}>  + </button>
+                <button onClick={openModal} >  + </button>
 
             </div>
             
             <div className="lista">
 
+            { modal ? <ModalTechs closeModal={closeModal} /> : <></> }
+             
                 <ul>
-                
-
-                   
-               
+ 
 
                 </ul>
                 
