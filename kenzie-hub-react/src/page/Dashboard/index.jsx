@@ -1,15 +1,24 @@
+import { CardListStyle } from "./style"
 import CardList from "../../components/CardList"
 import Header from "../../components/Header"
-import { CardListStyle } from "../../components/CardList/style"
+import { UserProfile } from "../../components/UserProfile"
 
 const Dashboard = () => {
-    
+
+
     return (
-        <CardListStyle>
-    
-                <Header />
+<>
+            <Header />
+
+            <UserProfile />
+
+            <CardListStyle>
+                    
                 <CardList />
-        </CardListStyle>
+            </CardListStyle>
+     
+</>
+
     )
 }
 export default Dashboard
