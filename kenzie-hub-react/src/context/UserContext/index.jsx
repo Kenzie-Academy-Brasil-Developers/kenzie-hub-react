@@ -6,6 +6,7 @@ import api from "../../services";
 export const UserContext = createContext({});
 /*  component provider  */
 const UserProvider = ({ children }) => {
+
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const UserProvider = ({ children }) => {
           api.defaults.headers.authorization = `Bearer ${token}`;
 
           const profile = await api.get("/profile");
-
+        
           setUser(profile);
         } catch (error) {
           console.error(error);
@@ -77,7 +78,7 @@ const UserProvider = ({ children }) => {
       .min(8, "no minimo 8 caracters")
       .required("Senha é obrigatório"),
   });
-
+  
   async function LoginUsers(data) {
     try {
       const response = await api.post("/sessions", data);
@@ -92,6 +93,7 @@ const UserProvider = ({ children }) => {
 
       navigate(toNavigate, { replace: true });
     } catch (error) {
+      
       console.log(error);
     }
   }

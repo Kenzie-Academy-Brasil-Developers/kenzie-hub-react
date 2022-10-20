@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const ListStyle = styled.div`
     display: flex;
     flex-direction: column;
-    align-self: center;
+    align-items: center;
 
     width: 100%;
     min-width: 296px;
@@ -27,8 +27,6 @@ export const ListStyle = styled.div`
             font-weight: 600;
             font-size: 16px;
             line-height: 18px;
-           
-            margin-left: 10%;
         }
 
         button  {
@@ -59,5 +57,4 @@ export const ListStyle = styled.div`
 
         border-radius: 4px;
     }
-
 `;

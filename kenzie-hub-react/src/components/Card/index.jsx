@@ -6,12 +6,13 @@ import { CardStyle } from "./style";
 
 const Card = ({ TechsList, list }) => {
   const { renderListaTechs } = useContext(CadastroTechContext);
+
   async function removeTech(e) {
     TechsList.filter((item, i) => {
       if (item.id === e.target.alt) {
-        const listDelete = api.delete(`/users/techs/${item.id}`);
-        renderListaTechs(listDelete);
+      api.delete(`/users/techs/${item.id}`);
       }
+      return renderListaTechs();
     });
   }
 

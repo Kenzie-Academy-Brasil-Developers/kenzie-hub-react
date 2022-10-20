@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import api from "../../services";
 
 export const CadastroTechContext = createContext({});
@@ -37,15 +37,16 @@ const CadastroProvider = ({ children }) => {
   const renderListaTechs = async () => {
     try {
       const profile = await api.get("/profile");
-
       const listaTech = profile.data.techs;
 
       setTechsList([...listaTech]);
-    } catch (error) {
-      console.log(error);
-    }
+    } catch (error) {}
   };
-  renderListaTechs();
+
+  useEffect(() => {
+    renderListaTechs();
+  }, []);
+
   return (
     <CadastroTechContext.Provider
       value={{
