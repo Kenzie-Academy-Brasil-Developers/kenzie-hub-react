@@ -1,24 +1,20 @@
-import { CardListStyle } from "./style"
-import CardList from "../../components/CardList"
-import Header from "../../components/Header"
-import { UserProfile } from "../../components/UserProfile"
+import { CardListStyle } from "./style";
+import CardList from "../../components/CardList";
+import Header from "../../components/Header";
+import { UserProfile } from "../../components/UserProfile";
+import CadastroProvider from "../../context/CadastroTechContext";
 
 const Dashboard = () => {
+  return (
+    <CadastroProvider>
+      <Header />
 
+      <UserProfile />
 
-    return (
-<>
-            <Header />
-
-            <UserProfile />
-
-            <CardListStyle>
-                    
-                <CardList />
-            </CardListStyle>
-     
-</>
-
-    )
-}
-export default Dashboard
+      <CardListStyle>
+        <CardList />
+      </CardListStyle>
+    </CadastroProvider>
+  );
+};
+export default Dashboard;

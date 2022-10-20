@@ -1,9 +1,12 @@
-import ToastStyled from "./style"
+import ToastStyled from "./style";
 
-const Toast = (response) => (
-    <ToastStyled >
-        <h5>{response}</h5>
+const Toast = ({ fechaModal }) => {
+  return (
+    <ToastStyled>
+      <h5>'</h5>
+
+      <button onClick={fechaModal}>fechar</button>
     </ToastStyled>
-)
-
-export default Toast
+  );
+};
+export default Toast;

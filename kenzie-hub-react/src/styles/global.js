@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-
 export default createGlobalStyle`
 
 :root {
@@ -36,4 +35,4 @@ body {
     font-family: 'Inter', sans-serif;
     background-color: var(--gray-4);
 }
-`
+`;

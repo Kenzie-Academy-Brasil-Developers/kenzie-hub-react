@@ -6,6 +6,7 @@ export const ListStyle = styled.div`
     align-self: center;
 
     width: 100%;
+    min-width: 296px;
 
     color: var(--gray-0);
     background-color: var(--gray-4);
@@ -37,6 +38,7 @@ export const ListStyle = styled.div`
             color: var(--gray-0);
 
             margin: 0 15px;
+            cursor: pointer;
         }
     }
 
@@ -58,4 +60,4 @@ export const ListStyle = styled.div`
         border-radius: 4px;
     }
 
-`
+`;

@@ -1,20 +1,27 @@
-import lixo from "../../assets/lixo.png"; 
-import { CardStyle } from "./style"
-import { useContext } from "react"
-import { UserContext } from "../../context/UserContext"
+import { useContext } from "react";
+import lixo from "../../assets/lixo.png";
+import { CadastroTechContext } from "../../context/CadastroTechContext";
+import api from "../../services";
+import { CardStyle } from "./style";
 
-const Card = () => {
-  
-  const {user} =  useContext(UserContext)
+const Card = ({ TechsList, list }) => {
+  const { renderListaTechs } = useContext(CadastroTechContext);
+  async function removeTech(e) {
+    TechsList.filter((item, i) => {
+      if (item.id === e.target.alt) {
+        const listDelete = api.delete(`/users/techs/${item.id}`);
+        renderListaTechs(listDelete);
+      }
+    });
+  }
+
   return (
-
-    <CardStyle>
-      <p>{user.techs.name}</p>
-      <span>{user.techs.nivel}</span>
-      <img src={lixo} alt={`imagem perfil de ${user.techs.name}`}></img>
-      
+    <CardStyle id={list.id}>
+      <p>{list.title}</p>
+      <span>{list.status}</span>
+      <img src={lixo} alt={list.id} onClick={removeTech}></img>
     </CardStyle>
-  )
-}
-  
+  );
+};
+
 export default Card;

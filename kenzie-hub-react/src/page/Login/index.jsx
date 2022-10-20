@@ -2,7 +2,6 @@ import FormLogin from "../../components/FormLogin";
 import { HeaderLogin } from "./style";
 
 const Login = () => {
-
   return (
     <>
       <HeaderLogin>

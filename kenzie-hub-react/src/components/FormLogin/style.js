@@ -127,4 +127,4 @@ export const FormLoginStyle = styled.div`
             background: var(--gray-2);
             border: 1px solid var(--gray-2);
         }
-`
+`;

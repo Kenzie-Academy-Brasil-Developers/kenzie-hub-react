@@ -1,20 +1,34 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../context/UserContext";
 import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormLoginStyle } from "./style";
+import Toast from "../Toast";
 
 const FormLogin = () => {
-  const { LoginUsers, schemaLoginUser} = useContext(UserContext);
+  const { LoginUsers, schemaLoginUser } = useContext(UserContext);
 
-  const { register, handleSubmit, formState: { errors },} = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(schemaLoginUser),
   });
 
+  const [toast, setToast] = useState(false);
+
+  function abreModal() {
+    setToast(true);
+  }
+  function fechaModal() {
+    setToast(false);
+  }
+
   return (
     <FormLoginStyle>
-      <h2>Login</h2>
+      <h2 onClick={abreModal}>Login</h2>
 
       <form onSubmit={handleSubmit(LoginUsers)}>
         <label>
@@ -46,6 +60,7 @@ const FormLogin = () => {
             Cadastrar-se
           </div>
         </Link>
+        {toast ? <Toast fechaModal={fechaModal} /> : <></>}
       </form>
     </FormLoginStyle>
   );

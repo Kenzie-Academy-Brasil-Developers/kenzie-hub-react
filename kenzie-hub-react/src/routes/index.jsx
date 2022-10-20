@@ -8,12 +8,11 @@ const RoutesMain = () => (
   <Routes>
     <Route path="/" element={<Login />} />
     <Route path="/register" element={<Register />} />
-    <Route path="*" element={<Navigate  to="/" />} />
+    <Route path="*" element={<Navigate to="/" />} />
 
-    <Route element={ <ProtectedRouteContext/> }>
+    <Route element={<ProtectedRouteContext />}>
       <Route path="/dashboard" element={<Dashboard />} />
     </Route>
-
   </Routes>
 );
 

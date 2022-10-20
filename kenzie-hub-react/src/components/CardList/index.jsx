@@ -1,45 +1,31 @@
-import { useContext, useState } from "react"
-import { UserContext } from "../../context/UserContext"
+import { useContext } from "react";
+import { CadastroTechContext } from "../../context/CadastroTechContext";
 
-import Card from "../Card"
-import { ModalTechs } from "../ModalTechs"
-import { ListStyle } from "./style"
+import Card from "../Card";
+import { ModalTechs } from "../ModalTechs";
+import { ListStyle } from "./style";
 
+const CardList = () => {
+  const { modal, openModal, TechsList } = useContext(CadastroTechContext);
 
-const  CardList = ( ) => {
+  return (
+    <ListStyle>
+      <div>
+        <h1>Tecnologias</h1>
+        <button onClick={openModal}> + </button>
+      </div>
 
-    const  [modal, setModal] = useState(false)
-    
-    function  openModal (){
-        setModal(true)
-    }
+      <div className="lista">
+        {modal ? <ModalTechs /> : <></>}
 
-    function  closeModal (){
-        setModal(false)
-    }
- 
-    return (
+        <ul>
+          {TechsList.map((list, i) => (
+            <Card key={i} TechsList={TechsList} list={list} />
+          ))}
+        </ul>
+      </div>
+    </ListStyle>
+  );
+};
 
-        <ListStyle>
-            <div>
-                <h1>Tecnologias</h1>
-                <button onClick={openModal} >  + </button>
-
-            </div>
-            
-            <div className="lista">
-
-            { modal ? <ModalTechs closeModal={closeModal} /> : <></> }
-             
-                <ul>
- 
-
-                </ul>
-                
-            </div>
-        
-        </ListStyle>
-    )
-}
-
-export default CardList
+export default CardList;

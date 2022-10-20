@@ -107,4 +107,4 @@ export const FormRegisterStyle = styled.div`
             border: 1px solid var(--color-primary-50);
         }
     }
-`
+`;
