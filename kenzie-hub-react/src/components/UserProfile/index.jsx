@@ -9,8 +9,8 @@ export const UserProfile = () => {
     return (
         <UserProfileStyle>
 
-            <h1>Olá, {user.data.name}</h1>
-            <p>{user.data.course_module}</p>
+            <h1>Olá, {user.name}</h1>
+            <p>{user.course_module}</p>
         </UserProfileStyle>
 
     )
