@@ -3,15 +3,14 @@ import styled from "styled-components";
 export const UserProfileStyle = styled.div`
     display: flex;
     flex-direction: column;
-
+    align-items: center;
+   text-align: center;
     width: 100%;
-    max-height: 131px;
 
     border-bottom: 1px solid var( --gray-3);
 
 h1 {  
-    width: 60%;
-    min-width: 200px;
+    width: 80%;
 
     font-weight: 700;
     font-size: 18px;
@@ -19,11 +18,11 @@ h1 {
 
     color: var(--gray-0);
 
-    margin: 40px auto 0 auto;
+    margin: 30px auto 0 auto;
 }
 
 p {
-    width: 50%;
+    width: 40%;
     
     margin: 20px auto 10px auto;
 
@@ -33,20 +32,44 @@ p {
     
     color: var(--gray-1)
 }
+@media (min-width: 300px){
+    text-align: unset;
+    h1 {
+        width: 100%;
+        margin: 30px auto 0 25%;
+    }
 
-@media (min-width: 500px) {
+    p {
+        width: 60%;
+        margin: 20px auto 10px 40%;
+    }
+}
+@media (min-width: 390px){
+    h1 {
+        margin: 30px auto 0 30%;
+    }
+}
+
+@media (min-width: 520px) {
+
+    width: 70%;
+    max-width: 600px;
     flex-direction: row;
 
-    justify-content: space-between;
-    text-align: center;
-    
-
     h1{
-        margin: 50px 0;
+        width: 120%;
+        margin: 50px 2% 50px 0;
     }
 
     p{
-        margin-top: 55px ;
+        margin: 55px 0 auto 20%;
     }
+}
+
+
+@media (min-width: 705px) {
+    h1 {
+        margin: 50px 20% 50px 0;
+    
 }
 `

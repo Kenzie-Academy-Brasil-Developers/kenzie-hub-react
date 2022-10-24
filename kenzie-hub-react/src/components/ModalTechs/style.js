@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const ModalStyle = styled.section`
-  position: absolute;
+  position: fixed;
   display: flex;
   justify-content: center;
 

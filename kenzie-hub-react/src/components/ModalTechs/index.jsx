@@ -26,7 +26,6 @@ export const ModalTechs = () => {
           </label>
 
           <label>
-            {" "}
             Selecionar Status
             <select onChange={(e) => setStatus(e.target.value)}>
               <option value="Iniciante">Iniciante</option>

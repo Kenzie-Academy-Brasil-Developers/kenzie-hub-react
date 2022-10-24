@@ -5,6 +5,7 @@ import Dashboard from "../page/Dashboard";
 import ProtectedRouteContext from "../context/ProtectedRouteContext";
 
 const RoutesMain = () => (
+  
   <Routes>
     <Route path="/" element={<Login />} />
     <Route path="/register" element={<Register />} />

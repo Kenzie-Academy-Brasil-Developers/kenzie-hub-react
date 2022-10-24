@@ -6,7 +6,7 @@ export const ListStyle = styled.div`
     align-items: center;
 
     width: 100%;
-    min-width: 296px;
+    min-width: 100px;
 
     color: var(--gray-0);
     background-color: var(--gray-4);
@@ -35,7 +35,7 @@ export const ListStyle = styled.div`
             border-radius: 4px;
             color: var(--gray-0);
 
-            margin: 0 15px;
+            margin: 0 5px;
             cursor: pointer;
         }
     }
@@ -48,13 +48,14 @@ export const ListStyle = styled.div`
     }
         
     ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
 
         background-color: var(--gray-2);
 
-        display: flex;
-        flex-direction: column;
-
+        padding: 0;
         border-radius: 4px;
     }
 `;

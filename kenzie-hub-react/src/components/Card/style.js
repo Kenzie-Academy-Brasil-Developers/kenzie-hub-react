@@ -13,23 +13,17 @@ border-radius: 4px;
 margin:  15px 0 ;
 
 p {
-    width: 40%;
+    min-width: 40%;
     font-weight: 700;
     font-size: 14.21px;
 
     color: var(--gray-0);
 
-    margin: 45px 10px;
+    margin: 45px 0px;
 }
 
 span {
-
-    font-weight: 400;
-    font-size: 12.182px;
-    
-    color: var(--gray-1);
-
-    margin: auto 15px;
+    display: none;
 }
 
 img {
@@ -45,9 +39,23 @@ img:hover {
     border-radius: 4px;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 520px) {
 
     width: 90%;
+
+    p {
+        margin: 45px 10px;
+    }
+
+    span {
+        display:
+        font-weight: 400;
+        font-size: 12.182px;
+        
+        color: var(--gray-1);
+    
+        margin: auto 15px; 
+    }
 }
 
 `

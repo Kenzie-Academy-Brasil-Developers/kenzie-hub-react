@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Toast from "../Toast";
 import { FormRegisterStyle } from "./style";
 
 const FormRegister = () => {
-  const { RegisterUser, schemaRegisterUser } = useContext(UserContext);
+  const { RegisterUser, schemaRegisterUser, toast } = useContext(UserContext);
 
   const {
     register,
@@ -96,6 +97,7 @@ const FormRegister = () => {
 
         <button type="submit">Cadastrar</button>
       </form>
+      {toast ? <Toast /> : <></>}
     </FormRegisterStyle>
   );
 };

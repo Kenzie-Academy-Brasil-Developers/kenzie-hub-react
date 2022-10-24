@@ -1,11 +1,19 @@
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 import ToastStyled from "./style";
 
-const Toast = ({ fechaModal }) => {
+const Toast = () => {
+  const { fechaModal, messageToast } = useContext(UserContext);
+
   return (
     <ToastStyled>
-      <h5>'</h5>
+      <div className="toast">
+        <h5>{messageToast}</h5>
 
-      <button onClick={fechaModal}>fechar</button>
+        <button className="btnToast" onClick={fechaModal}>
+          X
+        </button>
+      </div>
     </ToastStyled>
   );
 };
