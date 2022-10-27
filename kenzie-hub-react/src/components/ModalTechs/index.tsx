@@ -3,7 +3,7 @@ import { CadastroTechContext } from "../../context/CadastroTechContext";
 import { ModalStyle } from "./style";
 
 export const ModalTechs = () => {
-  const { closeModal, cadastrarTechs, setTecnologia, setStatus } =
+  const { closeModal, cadastrarTechs, setTecnologia, setStatus }: any =
     useContext(CadastroTechContext);
 
   return (

@@ -6,7 +6,8 @@ import Toast from "../Toast";
 import { FormRegisterStyle } from "./style";
 
 const FormRegister = () => {
-  const { RegisterUser, schemaRegisterUser, toast } = useContext(UserContext);
+  const { RegisterUser, schemaRegisterUser, toast }: any =
+    useContext(UserContext);
 
   const {
     register,
@@ -30,7 +31,7 @@ const FormRegister = () => {
             {...register("name")}
             placeholder="Digite aqui seu nome"
           />
-          <h6>{errors.name?.message}</h6>
+          <h6>{errors.name?.message as string}</h6>
         </label>
 
         <label>
@@ -40,7 +41,7 @@ const FormRegister = () => {
             {...register("email")}
             placeholder="Digite aqui seu email"
           />
-          <h6>{errors.email?.message}</h6>
+          <h6>{errors.email?.message as string}</h6>
         </label>
 
         <label>
@@ -50,7 +51,7 @@ const FormRegister = () => {
             {...register("password")}
             placeholder="Digite aqui sua senha"
           />
-          <h6>{errors.password?.message}</h6>
+          <h6>{errors.password?.message as string}</h6>
         </label>
 
         <label>
@@ -60,7 +61,7 @@ const FormRegister = () => {
             {...register("confirmPassword")}
             placeholder="Confirme aqui seu senha"
           />
-          <h6>{errors.confirmPassword?.message}</h6>
+          <h6>{errors.confirmPassword?.message as string}</h6>
         </label>
 
         <label>
@@ -70,7 +71,7 @@ const FormRegister = () => {
             {...register("bio")}
             placeholder="Fale sobre você"
           />
-          <h6>{errors.bio?.message}</h6>
+          <h6>{errors.bio?.message as string}</h6>
         </label>
 
         <label>
@@ -80,12 +81,12 @@ const FormRegister = () => {
             {...register("contact")}
             placeholder="Opção de contato"
           />
-          <h6>{errors.contact?.message}</h6>
+          <h6>{errors.contact?.message as string}</h6>
         </label>
 
         <label>
           Selecionar Módulo
-          <select type="text" {...register("course_module")}>
+          <select {...register("course_module")}>
             <option value="Primeiro módulo (Introdução ao FrontEnd)">
               Primeiro módulo
             </option>

@@ -1,10 +1,18 @@
 import { useContext } from "react";
-import lixo from "../../assets/lixo.png";
+import lixo  from "../../assets/lixo.png"
 import { CadastroTechContext } from "../../context/CadastroTechContext";
 import { CardStyle } from "./style";
 
-const Card = ({ list }) => {
-  const { removeTech } = useContext(CadastroTechContext);
+export interface ICardProps {
+  list: {
+    title: string;
+    status: string;
+    id: string;
+  };
+}
+
+const Card = ({ list }: ICardProps) => {
+  const { removeTech }: any = useContext(CadastroTechContext);
 
   return (
     <CardStyle id={list.id}>

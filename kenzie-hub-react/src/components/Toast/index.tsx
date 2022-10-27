@@ -3,7 +3,7 @@ import { UserContext } from "../../context/UserContext";
 import ToastStyled from "./style";
 
 const Toast = () => {
-  const { fechaModal, messageToast } = useContext(UserContext);
+  const { fechaModal, messageToast }: any = useContext(UserContext);
 
   return (
     <ToastStyled>

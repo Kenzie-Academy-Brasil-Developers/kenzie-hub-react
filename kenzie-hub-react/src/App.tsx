@@ -1,4 +1,3 @@
-import Toast from "./components/Toast";
 import UserProvider from "./context/UserContext";
 import Routes from "./routes";
 import Global from "./styles/global";

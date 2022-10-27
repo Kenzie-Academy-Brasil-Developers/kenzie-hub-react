@@ -7,7 +7,7 @@ import { FormLoginStyle } from "./style";
 import Toast from "../Toast";
 
 const FormLogin = () => {
-  const {toast, LoginUsers, schemaLoginUser } = useContext(UserContext);
+  const { toast, LoginUsers, schemaLoginUser }: any = useContext(UserContext);
 
   const {
     register,
@@ -29,7 +29,7 @@ const FormLogin = () => {
             {...register("email")}
             placeholder="123@kenziehub.com.br"
           />
-          <h6>{errors.email?.message}</h6>
+          <h6>{errors.email?.message as string}</h6>
         </label>
 
         <label>
@@ -39,17 +39,14 @@ const FormLogin = () => {
             {...register("password")}
             placeholder=" *  *  *  *  *  *  *  *"
           />
-          <h6>{errors.password?.message}</h6>
+          <h6>{errors.password?.message as string} </h6>
         </label>
 
         <button type="submit">Entrar</button>
 
         <span>Ainda não possui uma conta ?</span>
         <Link to="/Register">
-          <div type="submit" className="LinkRegister">
-            {" "}
-            Cadastrar-se
-          </div>
+          <div className="LinkRegister"> Cadastrar-se</div>
         </Link>
       </form>
       {toast ? <Toast /> : <></>}

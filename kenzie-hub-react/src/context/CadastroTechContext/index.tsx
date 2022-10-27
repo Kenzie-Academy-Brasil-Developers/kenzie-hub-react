@@ -1,10 +1,20 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, ReactNode, useEffect, useState } from "react";
 import api from "../../services";
+
+interface IProviderProps {
+  children: ReactNode
+}
+
+export interface ITechsList{
+  title:string,
+  status: string,
+  id: string
+}
 
 export const CadastroTechContext = createContext({});
 
-const CadastroProvider = ({ children }) => {
-  const [TechsList, setTechsList] = useState([]);
+const CadastroProvider = ({ children }: IProviderProps) => {
+  const [TechsList, setTechsList] = useState<ITechsList[]>([]);
   const [tecnologia, setTecnologia] = useState("");
   const [status, setStatus] = useState("Iniciante");
   const [modal, setModal] = useState(false);
@@ -16,7 +26,7 @@ const CadastroProvider = ({ children }) => {
     setModal(false);
   }
 
-  async function cadastrarTechs(evt) {
+  async function cadastrarTechs(evt: any) {
     evt.preventDefault();
     const token = localStorage.getItem("@kenziehub:token");
 
@@ -26,14 +36,14 @@ const CadastroProvider = ({ children }) => {
     };
     try {
       api.defaults.headers.authorization = `Bearer ${token}`;
-      const listaCadastro = await api.post("/users/techs", newTecnologia);
+      const listaCadastro: never = await api.post("/users/techs", newTecnologia);
     setTechsList([...TechsList, listaCadastro])
     } catch (error) {
       console.log(error);
     }
   }
 
-  async function removeTech(e) {
+  async function removeTech(e: any) {
     TechsList.filter(item => {
       if (item.id === e.target.alt) {
       api.delete(`/users/techs/${item.id}`);

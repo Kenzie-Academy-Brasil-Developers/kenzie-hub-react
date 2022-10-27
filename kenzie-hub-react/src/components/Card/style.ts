@@ -39,6 +39,17 @@ img:hover {
     border-radius: 4px;
 }
 
+@media (min-width: 340px) {
+   span{
+    display: block ;
+    font-weight: 400;
+    font-size: 12.182px;
+    
+    color: var(--gray-1);
+
+    margin: auto 15px; 
+    } 
+}
 @media (min-width: 520px) {
 
     width: 90%;
@@ -48,7 +59,6 @@ img:hover {
     }
 
     span {
-        display:
         font-weight: 400;
         font-size: 12.182px;
         

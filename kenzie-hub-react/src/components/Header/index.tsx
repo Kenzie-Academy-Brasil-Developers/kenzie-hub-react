@@ -4,7 +4,7 @@ import { UserContext } from "../../context/UserContext";
 import { Headerstyle } from "./style";
 
 const Header = () => {
-  const {logout} =  useContext(UserContext)
+  const {logout}: any =  useContext(UserContext)
 
   return (
     <Headerstyle>
