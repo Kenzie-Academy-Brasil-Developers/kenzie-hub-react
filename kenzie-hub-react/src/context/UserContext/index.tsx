@@ -18,11 +18,17 @@ interface ILoginUserData {
   email: string;
   password: string;
 }
-
+interface Response {
+  erro: string;
+  user: string;
+  token:  string;
+  userResponse: string;
+  // defina propriedades adicionais abaixo
+}
 export const UserContext = createContext({});
 /*  component provider  */
 const UserProvider = ({ children }: IUserProviderProps) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState("");
   const [loading, setLoading] = useState(true);
   const [toast, setToast] = useState(false);
   const navigate = useNavigate();
@@ -88,9 +94,9 @@ const UserProvider = ({ children }: IUserProviderProps) => {
 
   async function RegisterUser(data: IRegisterUserData) {
     try {
-      await api.post("/users", data);
+      await api.post<Response>("/users", data);
       navigate("/");
-    } catch (error:  any) {
+    } catch (error: any) {
       setMessageToast(error.response.data.message);
       setToast(true);
     }
@@ -109,7 +115,7 @@ const UserProvider = ({ children }: IUserProviderProps) => {
 
   async function LoginUsers(data: ILoginUserData) {
     try {
-      const response = await api.post("/sessions", data);
+      const response = await api.post<Response>("/sessions", data);
       const { user: userResponse, token } = response.data;
 
       api.defaults.headers.authorization = `Bearer ${token}`;
@@ -121,8 +127,8 @@ const UserProvider = ({ children }: IUserProviderProps) => {
       const toNavigate = location.state?.from?.pathname || "dashboard";
 
       navigate(toNavigate, { replace: true });
-    } catch (error: any) {
-      setMessageToast(error.response.data.message);
+    } catch (erro: any) {
+      setMessageToast(erro);
       setToast(true);
     }
   }

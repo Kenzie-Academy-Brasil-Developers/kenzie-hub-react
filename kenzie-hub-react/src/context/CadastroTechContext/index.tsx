@@ -4,7 +4,6 @@ import api from "../../services";
 interface IProviderProps {
   children: ReactNode
 }
-
 export interface ITechsList{
   title:string,
   status: string,
@@ -26,7 +25,7 @@ const CadastroProvider = ({ children }: IProviderProps) => {
     setModal(false);
   }
 
-  async function cadastrarTechs(evt: any) {
+  async function cadastrarTechs(evt: { preventDefault: () => void; }) {
     evt.preventDefault();
     const token = localStorage.getItem("@kenziehub:token");
 
@@ -36,14 +35,15 @@ const CadastroProvider = ({ children }: IProviderProps) => {
     };
     try {
       api.defaults.headers.authorization = `Bearer ${token}`;
-      const listaCadastro: never = await api.post("/users/techs", newTecnologia);
+      const listaCadastro: ITechsList = await api.post("/users/techs", newTecnologia);
+      console.log(listaCadastro)
     setTechsList([...TechsList, listaCadastro])
     } catch (error) {
       console.log(error);
     }
   }
 
-  async function removeTech(e: any) {
+  async function removeTech(e: { target: { alt: string }}) {
     TechsList.filter(item => {
       if (item.id === e.target.alt) {
       api.delete(`/users/techs/${item.id}`);
@@ -58,7 +58,9 @@ const CadastroProvider = ({ children }: IProviderProps) => {
       const listaTech = profile.data.techs;
 
       setTechsList([...listaTech]);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   useEffect(() => {

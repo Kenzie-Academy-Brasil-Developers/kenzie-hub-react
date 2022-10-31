@@ -5,7 +5,7 @@ import { ModalTechs } from "../ModalTechs";
 import { ListStyle } from "./style";
 
 const CardList = () => {
-  const { modal, openModal, TechsList }: any  = useContext(CadastroTechContext);
+  const { modal, openModal, TechsList }:any  = useContext(CadastroTechContext);
 
   return (
     <ListStyle>
@@ -18,7 +18,7 @@ const CardList = () => {
         {modal ? <ModalTechs /> : <></>}
 
         <ul>
-          {TechsList.map((list: any, i: any) => (
+          {TechsList.map((list: any, i: string) => (
             <Card key={i}  list={list} />
           ))}
         </ul>
